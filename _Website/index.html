@@ -1,22 +1,21 @@
-<!-- index.html -->
+<!-- index.html - Root -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=Home/index.html" />
-    <title>Wonderloop</title>
-
-    <!-- Fallback redirect using JS if meta fails -->
-    <script>
-      /* Redirect to Home page manually if meta refresh doesn't work */
-      setTimeout(() => {
-        window.location.href = "Home/index.html";
-      }, 100);
-    </script>
-  </head>
-  <body>
-    <!-- Simple fallback message in case redirection takes time -->
-    <p>Redirecting to the homepage...</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonderloop – Home</title>
+  <meta http-equiv="refresh" content="0; url=Home/index.html" />
+  <style>
+    /* Prevent flash of unwanted text while redirecting */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- No visible text for cleaner redirect -->
+</body>
 </html>
