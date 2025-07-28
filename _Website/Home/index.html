@@ -1,87 +1,94 @@
-<!-- Home/index.html -->
+<!-- _Website/Home/index.html
+     Main homepage. 100 % static — all dynamic behaviour handled by
+     Home/home.js  +  _ThemeToggle/darkmode.js
+     ------------------------------------------------------------- */
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wonderloop – Home</title>
+  <title>Wonderloop – Home</title>
+
+  <!-- Stylesheets */ -->
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="../_Footer/footer.css" />
   <link rel="stylesheet" href="../_ThemeToggle/darkmode.css" />
+
+  <!-- Scripts (deferred for faster paint) */ -->
+  <script defer src="../_ThemeToggle/darkmode.js"></script>
   <script defer src="home.js"></script>
   <script defer src="../_Footer/footer.js"></script>
-  <script defer src="../_ThemeToggle/darkmode.js"></script>
 </head>
+
 <body>
-  <!-- Blog Title Bar -->
+  <!-- 🔷 Blog title bar (blue) */ -->
   <header class="blog-header">
     <h1 class="blog-title">Wonderloop</h1>
 
-    <!-- Dark Mode Toggle -->
-    <div class="theme-toggle">
-      <label class="toggle-switch">
-        <input type="checkbox" id="modeToggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
+    <!-- 🌗 Dark / light toggle  – input id MUST stay “theme-toggle” */ -->
+    <label class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
 
-    <!-- Search -->
+    <!-- 🔍 Search (icon on mobile, bar on desktop) */ -->
     <div class="search-area">
-      <!-- Mobile search icon -->
-      <button class="search-icon" id="openSearch">🔍</button>
+      <button id="search-icon" class="search-icon">🔍</button>
 
-      <!-- Desktop and mobile search bar -->
-      <form class="search-bar" id="searchForm">
+      <form id="search-bar" class="search-bar">
         <input type="text" placeholder="Search this blog" />
         <button type="submit">🔍</button>
       </form>
     </div>
   </header>
 
-  <!-- Navigation Bar -->
+  <!-- 🧭 Navigation */ -->
   <nav class="nav-bar">
     <a href="../Home/index.html" class="active">Home</a>
-    <a href="../Categories/categories.html">Categories</a>
-    <a href="../AllPosts/allposts.html">All Posts</a>
-    <a href="../About/about.html">About</a>
+    <a href="../Categories/index.html">Categories</a>
+    <a href="../AllPosts/index.html">All Posts</a>
+    <a href="../About/index.html">About</a>
   </nav>
 
-  <!-- Surprise Me Button -->
-  <div class="surprise-me-container">
-    <button class="surprise-me-btn" id="surpriseBtn">
-      🎲 Surprise Me!
-    </button>
+  <!-- 🎲 Surprise‑me section */ -->
+  <section class="surprise-me-container">
+    <button id="surprise-btn" class="surprise-me-btn">🎲 Surprise Me!</button>
     <span class="tooltip">Takes you to a random post</span>
-  </div>
-
-  <!-- Section Title -->
-  <section class="section-header">
-    <h2>Featured Posts</h2>
   </section>
 
-  <!-- Post Cards Container -->
-  <section class="post-container" id="postContainer">
-    <!-- Sample Post Card -->
+  <!-- 🌟 Featured posts header */ -->
+  <section class="section-header">
+    <h2>Featured Posts</h2>
+  </section>
+
+  <!-- 📰 Post cards (add/remove as needed) */ -->
+  <section id="postContainer" class="post-container">
+    <!-- Card 1 */
+    -->
     <div class="post-card">
       <div class="card-header">
-        <h3 class="post-title">Why Penguins Don't Get Cold Feet</h3>
-        <button class="share-btn" data-url="#">🔗</button>
+        <h3 class="post-title">Why Penguins Don’t Get Cold Feet</h3>
+        <button class="share-btn">🔗</button>
       </div>
-      <p class="post-teaser">Ever wonder how penguins handle icy weather? Here's what science says...</p>
+      <p class="post-teaser">
+        Ever wonder how penguins handle icy weather?  Here’s what science says…
+      </p>
       <div class="card-footer">
-        <span class="post-date">July 25, 2025</span>
+        <span class="post-date">July 25, 2025</span>
         <a href="../_Posts/_Articles/article1.html" class="read-btn">Read</a>
       </div>
     </div>
-    <!-- Add 7 more post cards similarly -->
+
+    <!-- Duplicate / edit this card 7 more times for top‑8 */
   </section>
 
-  <!-- See All Posts Button -->
+  <!-- 🔗 See‑all‑posts button */ -->
   <div class="see-all-container">
-    <a href="../AllPosts/allposts.html" class="see-all-btn">See All Posts</a>
+    <a href="../AllPosts/index.html" class="see-all-btn">See All Posts</a>
   </div>
 
-  <!-- Footer -->
+  <!-- 🦶 Footer (pulled in by footer.js) */ -->
   <footer class="footer"></footer>
 </body>
 </html>
