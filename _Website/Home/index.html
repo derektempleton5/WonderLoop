@@ -1,90 +1,87 @@
+<!-- Home/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Wonderloop - Home</title>
-  <link rel="stylesheet" href="../Home/home.css" />
-  <link rel="stylesheet" href="../_ThemeToggle/toggle.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonderloop – Home</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="../_Footer/footer.css" />
+  <link rel="stylesheet" href="../_ThemeToggle/darkmode.css" />
+  <script defer src="home.js"></script>
+  <script defer src="../_Footer/footer.js"></script>
+  <script defer src="../_ThemeToggle/darkmode.js"></script>
 </head>
 <body>
   <!-- Blog Title Bar -->
-  <header class="blog-title-bar">
+  <header class="blog-header">
     <h1 class="blog-title">Wonderloop</h1>
 
     <!-- Dark Mode Toggle -->
-    <div class="theme-toggle-container">
-      <input type="checkbox" id="theme-toggle" />
-      <label for="theme-toggle" class="toggle-switch"></label>
+    <div class="theme-toggle">
+      <label class="toggle-switch">
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider"></span>
+      </label>
     </div>
 
-    <!-- Search Section -->
-    <div class="search-container">
-      <!-- Mobile Search Icon -->
-      <button class="mobile-search-icon">
-        🔍
-      </button>
+    <!-- Search -->
+    <div class="search-area">
+      <!-- Mobile search icon -->
+      <button class="search-icon" id="openSearch">🔍</button>
 
-      <!-- Desktop Search Bar -->
-      <div class="desktop-search">
-        <input
-          type="text"
-          placeholder="Search this blog"
-          class="search-input"
-        />
-        <span class="search-icon">🔍</span>
-      </div>
+      <!-- Desktop and mobile search bar -->
+      <form class="search-bar" id="searchForm">
+        <input type="text" placeholder="Search this blog" />
+        <button type="submit">🔍</button>
+      </form>
     </div>
   </header>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <a href="../Home/index.html" class="nav-link active">Home</a>
-    <a href="../Categories/categories.html" class="nav-link">Categories</a>
-    <a href="../AllPosts/allposts.html" class="nav-link">All Posts</a>
-    <a href="../About/about.html" class="nav-link">About</a>
+  <nav class="nav-bar">
+    <a href="../Home/index.html" class="active">Home</a>
+    <a href="../Categories/categories.html">Categories</a>
+    <a href="../AllPosts/allposts.html">All Posts</a>
+    <a href="../About/about.html">About</a>
   </nav>
 
   <!-- Surprise Me Button -->
-  <section class="surprise-me">
-    <button class="surprise-button">
+  <div class="surprise-me-container">
+    <button class="surprise-me-btn" id="surpriseBtn">
       🎲 Surprise Me!
     </button>
-    <span class="surprise-tooltip">Takes you to a random post</span>
-  </section>
+    <span class="tooltip">Takes you to a random post</span>
+  </div>
 
-  <!-- Featured Posts Section -->
-  <section class="featured-posts">
+  <!-- Section Title -->
+  <section class="section-header">
     <h2>Featured Posts</h2>
-
-    <!-- Post Card 1 -->
-    <div class="post-card">
-      <div class="post-header">
-        <h3 class="post-title">The Banana That Went to Space</h3>
-        <button class="share-button">🔗</button>
-      </div>
-      <p class="post-preview">Did you know a banana once orbited Earth? Discover more juicy space fruits...</p>
-      <div class="post-footer">
-        <span class="post-date">July 2025</span>
-        <a href="../_Posts/_Articles/article1.html" class="read-button">Read</a>
-      </div>
-    </div>
-
-    <!-- Add more post cards as needed -->
-
-    <!-- See All Posts Button -->
-    <div class="see-all-wrapper">
-      <a href="../AllPosts/allposts.html" class="see-all-button">See All Posts</a>
-    </div>
   </section>
+
+  <!-- Post Cards Container -->
+  <section class="post-container" id="postContainer">
+    <!-- Sample Post Card -->
+    <div class="post-card">
+      <div class="card-header">
+        <h3 class="post-title">Why Penguins Don't Get Cold Feet</h3>
+        <button class="share-btn" data-url="#">🔗</button>
+      </div>
+      <p class="post-teaser">Ever wonder how penguins handle icy weather? Here's what science says...</p>
+      <div class="card-footer">
+        <span class="post-date">July 25, 2025</span>
+        <a href="../_Posts/_Articles/article1.html" class="read-btn">Read</a>
+      </div>
+    </div>
+    <!-- Add 7 more post cards similarly -->
+  </section>
+
+  <!-- See All Posts Button -->
+  <div class="see-all-container">
+    <a href="../AllPosts/allposts.html" class="see-all-btn">See All Posts</a>
+  </div>
 
   <!-- Footer -->
-  <footer>
-    <iframe src="../_Footer/footer.html" frameborder="0" class="footer-frame"></iframe>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="../_ThemeToggle/toggle.js"></script>
-  <script src="../Home/home.js"></script>
+  <footer class="footer"></footer>
 </body>
 </html>
