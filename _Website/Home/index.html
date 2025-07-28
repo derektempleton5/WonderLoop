@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Wonderloop - Home</title>
+  <link rel="stylesheet" href="../Home/home.css" />
+  <link rel="stylesheet" href="../_ThemeToggle/toggle.css" />
+</head>
+<body>
+  <!-- Blog Title Bar -->
+  <header class="blog-title-bar">
+    <h1 class="blog-title">Wonderloop</h1>
 
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle-container">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle" class="toggle-switch"></label>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-container">
+      <!-- Mobile Search Icon -->
+      <button class="mobile-search-icon">
+        🔍
+      </button>
+
+      <!-- Desktop Search Bar -->
+      <div class="desktop-search">
+        <input
+          type="text"
+          placeholder="Search this blog"
+          class="search-input"
+        />
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="../Home/index.html" class="nav-link active">Home</a>
+    <a href="../Categories/categories.html" class="nav-link">Categories</a>
+    <a href="../AllPosts/allposts.html" class="nav-link">All Posts</a>
+    <a href="../About/about.html" class="nav-link">About</a>
+  </nav>
+
+  <!-- Surprise Me Button -->
+  <section class="surprise-me">
+    <button class="surprise-button">
+      🎲 Surprise Me!
+    </button>
+    <span class="surprise-tooltip">Takes you to a random post</span>
+  </section>
+
+  <!-- Featured Posts Section -->
+  <section class="featured-posts">
+    <h2>Featured Posts</h2>
+
+    <!-- Post Card 1 -->
+    <div class="post-card">
+      <div class="post-header">
+        <h3 class="post-title">The Banana That Went to Space</h3>
+        <button class="share-button">🔗</button>
+      </div>
+      <p class="post-preview">Did you know a banana once orbited Earth? Discover more juicy space fruits...</p>
+      <div class="post-footer">
+        <span class="post-date">July 2025</span>
+        <a href="../_Posts/_Articles/article1.html" class="read-button">Read</a>
+      </div>
+    </div>
+
+    <!-- Add more post cards as needed -->
+
+    <!-- See All Posts Button -->
+    <div class="see-all-wrapper">
+      <a href="../AllPosts/allposts.html" class="see-all-button">See All Posts</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <iframe src="../_Footer/footer.html" frameborder="0" class="footer-frame"></iframe>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../_ThemeToggle/toggle.js"></script>
+  <script src="../Home/home.js"></script>
+</body>
+</html>
