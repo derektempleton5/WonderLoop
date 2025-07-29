@@ -1,35 +1,36 @@
-// Show/hide search bar on mobile
-document.addEventListener('DOMContentLoaded', () => {
-  const searchToggle = document.getElementById('mobile-search-toggle');
-  const searchBar = document.getElementById('search-bar');
+// Wait for DOM to fully load
+document.addEventListener("DOMContentLoaded", () => {
+  /* Handle Mobile Search Toggle */
+  const searchIcon = document.getElementById("search-icon");
+  const searchBar = document.querySelector(".search-bar-container");
 
-  if (searchToggle && searchBar) {
-    searchToggle.addEventListener('click', () => {
-      searchBar.classList.toggle('hidden');
-      searchToggle.style.display = 'none'; // Hide original search icon after click
+  if (searchIcon && searchBar) {
+    searchIcon.addEventListener("click", () => {
+      searchBar.classList.toggle("active");
+      searchIcon.style.display = "none"; // Hide icon when search is active
     });
   }
 
-  // Surprise Me button
-  const surpriseBtn = document.getElementById('surprise-btn');
+  /* Surprise Me Button Redirect */
+  const surpriseBtn = document.getElementById("surprise-btn");
   if (surpriseBtn) {
-    surpriseBtn.addEventListener('click', () => {
-      const articles = [
-        "../_Posts/article1.html",
-        "../_Posts/article2.html",
-        "../_Posts/article3.html"
+    surpriseBtn.addEventListener("click", () => {
+      // Replace the following array with real post links if needed
+      const surpriseLinks = [
+        "/_Posts/post1.html",
+        "/_Posts/post2.html",
+        "/_Posts/post3.html"
       ];
-      const random = Math.floor(Math.random() * articles.length);
-      window.location.href = articles[random];
+      const randomIndex = Math.floor(Math.random() * surpriseLinks.length);
+      window.location.href = surpriseLinks[randomIndex];
+    });
+  }
+
+  /* See All Posts Button */
+  const allPostsBtn = document.getElementById("see-all-posts");
+  if (allPostsBtn) {
+    allPostsBtn.addEventListener("click", () => {
+      window.location.href = "/AllPosts/index.html";
     });
   }
 });
-
-// Copy link function for share icon
-function copyToClipboard(button) {
-  const dummyLink = window.location.href;
-  navigator.clipboard.writeText(dummyLink).then(() => {
-    button.textContent = "✅";
-    setTimeout(() => (button.textContent = "🔗"), 1500);
-  });
-}
