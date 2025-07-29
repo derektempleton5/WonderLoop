@@ -1,94 +1,96 @@
-<!-- _Website/Home/index.html
-     Main homepage. 100 % static — all dynamic behaviour handled by
-     Home/home.js  +  _ThemeToggle/darkmode.js
-     ------------------------------------------------------------- */
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wonderloop – Home</title>
+  <title>Wonderloop — Home</title>
 
-  <!-- Stylesheets */ -->
-  <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="../_Footer/footer.css" />
+  <!-- Fonts: Poppins and Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="../_ThemeToggle/darkmode.css" />
+  <link rel="stylesheet" href="home.css" />
 
-  <!-- Scripts (deferred for faster paint) */ -->
-  <script defer src="../_ThemeToggle/darkmode.js"></script>
-  <script defer src="home.js"></script>
-  <script defer src="../_Footer/footer.js"></script>
+  <!-- Scripts -->
+  <script src="../_ThemeToggle/darkmode.js" defer></script>
+  <script src="home.js" defer></script>
 </head>
-
 <body>
-  <!-- 🔷 Blog title bar (blue) */ -->
+
+  <!-- Blog Title Header -->
   <header class="blog-header">
     <h1 class="blog-title">Wonderloop</h1>
 
-    <!-- 🌗 Dark / light toggle  – input id MUST stay “theme-toggle” */ -->
-    <label class="theme-switch">
-      <input type="checkbox" id="theme-toggle" />
-      <span class="slider"></span>
-    </label>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle-container">
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
 
-    <!-- 🔍 Search (icon on mobile, bar on desktop) */ -->
-    <div class="search-area">
-      <button id="search-icon" class="search-icon">🔍</button>
-
-      <form id="search-bar" class="search-bar">
-        <input type="text" placeholder="Search this blog" />
-        <button type="submit">🔍</button>
-      </form>
+    <!-- Search -->
+    <div class="search-container">
+      <button id="mobile-search-toggle" class="search-icon-btn">🔍</button>
+      <div class="search-bar hidden" id="search-bar">
+        <input
+          type="text"
+          placeholder="Search this blog"
+          class="search-input"
+        />
+        <button class="search-submit-btn">🔍</button>
+      </div>
     </div>
   </header>
 
-  <!-- 🧭 Navigation */ -->
-  <nav class="nav-bar">
-    <a href="../Home/index.html" class="active">Home</a>
-    <a href="../Categories/index.html">Categories</a>
-    <a href="../AllPosts/index.html">All Posts</a>
-    <a href="../About/index.html">About</a>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="../Home" class="nav-link active">Home</a>
+    <a href="../Categories/categories.html" class="nav-link">Categories</a>
+    <a href="../AllPosts/allposts.html" class="nav-link">All Posts</a>
+    <a href="../About/about.html" class="nav-link">About</a>
   </nav>
 
-  <!-- 🎲 Surprise‑me section */ -->
-  <section class="surprise-me-container">
-    <button id="surprise-btn" class="surprise-me-btn">🎲 Surprise Me!</button>
-    <span class="tooltip">Takes you to a random post</span>
+  <!-- Surprise Me Button -->
+  <section class="surprise-section">
+    <button class="surprise-btn" id="surprise-btn">
+      🎲 Surprise Me!
+    </button>
+    <div class="tooltip">Takes you to a random post</div>
   </section>
 
-  <!-- 🌟 Featured posts header */ -->
-  <section class="section-header">
-    <h2>Featured Posts</h2>
-  </section>
+  <!-- Featured Section -->
+  <section class="featured-section">
+    <h2 class="section-heading">Featured Posts</h2>
 
-  <!-- 📰 Post cards (add/remove as needed) */ -->
-  <section id="postContainer" class="post-container">
-    <!-- Card 1 */
-    -->
-    <div class="post-card">
-      <div class="card-header">
-        <h3 class="post-title">Why Penguins Don’t Get Cold Feet</h3>
-        <button class="share-btn">🔗</button>
+    <div class="post-list">
+      <!-- Example Post Card -->
+      <div class="post-card fade-in">
+        <div class="post-header">
+          <h3 class="post-title">The Mystery of Octopus Intelligence</h3>
+          <button class="share-btn" onclick="copyToClipboard(this)">🔗</button>
+        </div>
+        <p class="post-teaser">Octopuses open jars, escape tanks, and solve puzzles... but what makes them so smart?</p>
+        <div class="post-footer">
+          <span class="post-date">July 25, 2025</span>
+          <a href="../_Posts/octopus-intelligence.html" class="read-btn">Read</a>
+        </div>
       </div>
-      <p class="post-teaser">
-        Ever wonder how penguins handle icy weather?  Here’s what science says…
-      </p>
-      <div class="card-footer">
-        <span class="post-date">July 25, 2025</span>
-        <a href="../_Posts/_Articles/article1.html" class="read-btn">Read</a>
-      </div>
+
+      <!-- Additional post cards would follow the same structure -->
     </div>
 
-    <!-- Duplicate / edit this card 7 more times for top‑8 */
+    <!-- See All Posts -->
+    <div class="see-all-container">
+      <a href="../AllPosts/allposts.html" class="see-all-btn">See All Posts</a>
+    </div>
   </section>
 
-  <!-- 🔗 See‑all‑posts button */ -->
-  <div class="see-all-container">
-    <a href="../AllPosts/index.html" class="see-all-btn">See All Posts</a>
-  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 Wonderloop. Built with curiosity.</p>
+  </footer>
 
-  <!-- 🦶 Footer (pulled in by footer.js) */ -->
-  <footer class="footer"></footer>
 </body>
 </html>
