@@ -1,45 +1,35 @@
-// Wait for DOM to load
+// Show/hide search bar on mobile
 document.addEventListener('DOMContentLoaded', () => {
-  // Search Toggle (Mobile)
-  const searchIcon = document.getElementById('search-icon');
+  const searchToggle = document.getElementById('mobile-search-toggle');
   const searchBar = document.getElementById('search-bar');
 
-  if (searchIcon && searchBar) {
-    searchIcon.addEventListener('click', () => {
-      searchBar.classList.toggle('active');
-      searchIcon.style.display = 'none'; // Hide search icon after click
+  if (searchToggle && searchBar) {
+    searchToggle.addEventListener('click', () => {
+      searchBar.classList.toggle('hidden');
+      searchToggle.style.display = 'none'; // Hide original search icon after click
     });
   }
 
-  // Share Button Functionality
-  const shareButtons = document.querySelectorAll('.share-btn');
-
-  shareButtons.forEach(button => {
-    button.addEventListener('click', async () => {
-      const postCard = button.closest('.post-card');
-      const title = postCard.querySelector('.post-title').innerText;
-      const url = window.location.href;
-
-      try {
-        await navigator.clipboard.writeText(`${title} - ${url}`);
-        alert('Post link copied to clipboard!');
-      } catch (err) {
-        alert('Failed to copy link.');
-      }
-    });
-  });
-
-  // Surprise Me Button Animation
+  // Surprise Me button
   const surpriseBtn = document.getElementById('surprise-btn');
-
   if (surpriseBtn) {
     surpriseBtn.addEventListener('click', () => {
-      surpriseBtn.classList.add('shake');
-      setTimeout(() => {
-        surpriseBtn.classList.remove('shake');
-        // Optionally redirect to random post
-        // window.location.href = '/Posts/post3/index.html';
-      }, 500);
+      const articles = [
+        "../_Posts/article1.html",
+        "../_Posts/article2.html",
+        "../_Posts/article3.html"
+      ];
+      const random = Math.floor(Math.random() * articles.length);
+      window.location.href = articles[random];
     });
   }
 });
+
+// Copy link function for share icon
+function copyToClipboard(button) {
+  const dummyLink = window.location.href;
+  navigator.clipboard.writeText(dummyLink).then(() => {
+    button.textContent = "✅";
+    setTimeout(() => (button.textContent = "🔗"), 1500);
+  });
+}
