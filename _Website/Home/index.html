@@ -3,86 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wonderloop — Home</title>
+  <title>Wonderloop — Stay Curious</title>
 
-  <!-- Fonts: Poppins and Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../_ThemeToggle/darkmode.css" />
   <link rel="stylesheet" href="home.css" />
-
-  <!-- Scripts -->
-  <script src="../_ThemeToggle/darkmode.js" defer></script>
-  <script src="home.js" defer></script>
 </head>
 <body>
 
-  <!-- Blog Title Header -->
+  <!-- Blog Header with Title, Search, and Toggle -->
   <header class="blog-header">
     <h1 class="blog-title">Wonderloop</h1>
 
-    <!-- Search -->
-    <div class="search-container">
-      <button id="mobile-search-toggle" class="search-icon-btn">🔍</button>
-      <div class="search-bar hidden" id="search-bar">
-        <input
-          type="text"
-          placeholder="Search this blog"
-          class="search-input"
-        />
-        <button class="search-submit-btn">🔍</button>
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+      <!-- Mobile: Search Icon -->
+      <button id="mobileSearchIcon" class="search-icon">&#128269;</button>
+
+      <!-- Search Bar (hidden on mobile) -->
+      <div id="searchBarContainer" class="search-bar-container">
+        <input type="text" placeholder="Search curiosity..." class="search-input" />
+        <button class="search-button">🔍</button>
       </div>
     </div>
   </header>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <a href="../Home" class="nav-link active">Home</a>
-    <a href="../Categories/categories.html" class="nav-link">Categories</a>
-    <a href="../AllPosts/allposts.html" class="nav-link">All Posts</a>
-    <a href="../About/about.html" class="nav-link">About</a>
+  <nav class="nav-bar">
+    <a href="/Home" class="nav-link">Home</a>
+    <a href="/Categories" class="nav-link">Categories</a>
+    <a href="/AllPosts" class="nav-link">All Posts</a>
+    <a href="/About" class="nav-link">About</a>
   </nav>
 
   <!-- Surprise Me Button -->
-  <section class="surprise-section">
-    <button class="surprise-btn" id="surprise-btn">
-      🎲 Surprise Me!
-    </button>
-    <div class="tooltip">Takes you to a random post</div>
-  </section>
+  <div class="surprise-container">
+    <button id="surpriseBtn" class="surprise-btn">🎲 Surprise Me!</button>
+    <span class="surprise-tooltip">Takes you to a random article</span>
+  </div>
 
-  <!-- Featured Section -->
-  <section class="featured-section">
-    <h2 class="section-heading">Featured Posts</h2>
-
-    <div class="post-list">
-      <!-- Example Post Card -->
-      <div class="post-card fade-in">
-        <div class="post-header">
-          <h3 class="post-title">The Mystery of Octopus Intelligence</h3>
-          <button class="share-btn" onclick="copyToClipboard(this)">🔗</button>
-        </div>
-        <p class="post-teaser">Octopuses open jars, escape tanks, and solve puzzles... but what makes them so smart?</p>
-        <div class="post-footer">
-          <span class="post-date">July 25, 2025</span>
-          <a href="../_Posts/octopus-intelligence.html" class="read-btn">Read</a>
-        </div>
-      </div>
-
-      <!-- Additional post cards would follow the same structure -->
+  <!-- Post Cards Section -->
+  <section class="post-section">
+    <!-- Sample Post Cards -->
+    <div class="post-card">
+      <img src="/_Images/image1.jpeg" alt="Post Image" class="post-image" />
+      <h2 class="post-title">Is Water Wet?</h2>
+      <p class="post-preview">A surprisingly complex debate about something we use every day.</p>
+      <a href="/_Posts/_Articles/article1.html" class="read-more">Read</a>
     </div>
 
-    <!-- See All Posts -->
-    <div class="see-all-container">
-      <a href="../AllPosts/allposts.html" class="see-all-btn">See All Posts</a>
+    <div class="post-card">
+      <img src="/_Images/image2.jpeg" alt="Post Image" class="post-image" />
+      <h2 class="post-title">Why Do Cats Purr?</h2>
+      <p class="post-preview">Not just for joy — there's science and mystery behind it.</p>
+      <a href="/_Posts/_Articles/article2.html" class="read-more">Read</a>
+    </div>
+
+    <div class="post-card">
+      <img src="/_Images/image3.jpeg" alt="Post Image" class="post-image" />
+      <h2 class="post-title">What If Earth Stopped Spinning?</h2>
+      <p class="post-preview">Spoiler: You’d be flung into the air at 1600 km/h.</p>
+      <a href="/_Posts/_Articles/article3.html" class="read-more">Read</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>© 2025 Wonderloop. Built with curiosity.</p>
-  </footer>
+  <!-- See All Posts Button -->
+  <div class="see-all-wrapper">
+    <a href="/AllPosts" class="see-all-posts">📚 See All Posts</a>
+  </div>
 
+  <!-- Footer Include -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="home.js"></script>
 </body>
 </html>
