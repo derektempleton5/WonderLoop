@@ -3,81 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wonderloop — Stay Curious</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
+  <title>Wonderloop</title>
   <link rel="stylesheet" href="home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat:wght@600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- Blog Header with Title, Search, and Toggle -->
   <header class="blog-header">
-    <h1 class="blog-title">Wonderloop</h1>
-
-    <!-- Search Wrapper -->
-    <div class="search-wrapper">
-      <!-- Mobile: Search Icon -->
-      <button id="mobileSearchIcon" class="search-icon">&#128269;</button>
-
-      <!-- Search Bar (hidden on mobile) -->
-      <div id="searchBarContainer" class="search-bar-container">
-        <input type="text" placeholder="Search curiosity..." class="search-input" />
-        <button class="search-button">🔍</button>
+    <div class="blog-title-bar">
+      <h1 class="blog-title">Wonderloop</h1>
+      <div id="mobileSearchToggle" class="search-icon">&#128269;</div>
+      <div class="search-section">
+        <input type="text" id="desktopSearchInput" placeholder="Search curiosity..." />
+        <button id="desktopSearchButton">&#128269;</button>
       </div>
+    </div>
+    <nav class="navbar">
+      <a href="/Home" class="nav-link active">Home</a>
+      <a href="/Categories" class="nav-link">Categories</a>
+      <a href="/AllPosts" class="nav-link">All Posts</a>
+      <a href="/About" class="nav-link">About</a>
+    </nav>
+    <div id="mobileSearchContainer">
+      <input type="text" id="mobileSearchInput" placeholder="Search curiosity..." />
+      <button id="mobileSearchButton">&#128269;</button>
     </div>
   </header>
 
-  <!-- Navigation Bar -->
-  <nav class="nav-bar">
-    <a href="/Home" class="nav-link">Home</a>
-    <a href="/Categories" class="nav-link">Categories</a>
-    <a href="/AllPosts" class="nav-link">All Posts</a>
-    <a href="/About" class="nav-link">About</a>
-  </nav>
-
-  <!-- Surprise Me Button -->
-  <div class="surprise-container">
-    <button id="surpriseBtn" class="surprise-btn">🎲 Surprise Me!</button>
-    <span class="surprise-tooltip">Takes you to a random article</span>
-  </div>
-
-  <!-- Post Cards Section -->
-  <section class="post-section">
-    <!-- Sample Post Cards -->
-    <div class="post-card">
-      <img src="/_Images/image1.jpeg" alt="Post Image" class="post-image" />
-      <h2 class="post-title">Is Water Wet?</h2>
-      <p class="post-preview">A surprisingly complex debate about something we use every day.</p>
-      <a href="/_Posts/_Articles/article1.html" class="read-more">Read</a>
+  <main class="main-content">
+    <div class="surprise-section">
+      <button id="surpriseBtn">🎲 Surprise Me</button>
+      <span id="surpriseTooltip">Takes you to a random post</span>
     </div>
 
-    <div class="post-card">
-      <img src="/_Images/image2.jpeg" alt="Post Image" class="post-image" />
-      <h2 class="post-title">Why Do Cats Purr?</h2>
-      <p class="post-preview">Not just for joy — there's science and mystery behind it.</p>
-      <a href="/_Posts/_Articles/article2.html" class="read-more">Read</a>
-    </div>
+    <h2 class="featured-heading">Featured Posts</h2>
 
-    <div class="post-card">
-      <img src="/_Images/image3.jpeg" alt="Post Image" class="post-image" />
-      <h2 class="post-title">What If Earth Stopped Spinning?</h2>
-      <p class="post-preview">Spoiler: You’d be flung into the air at 1600 km/h.</p>
-      <a href="/_Posts/_Articles/article3.html" class="read-more">Read</a>
-    </div>
-  </section>
+    <section class="post-cards">
+      <div class="post-card">
+        <div class="card-header">
+          <button class="share-btn" data-link="https://wonderloop.dpdns.org/_Posts/post1.html">🔗</button>
+        </div>
+        <div class="card-body">
+          <h3 class="post-title">Curiosity Unleashed</h3>
+          <p class="post-preview">Discover how a single question can change the way you see the world.</p>
+        </div>
+        <div class="card-footer">
+          <span class="post-date">July 2025</span>
+          <button class="read-btn" data-link="/_Posts/post1.html">Read</button>
+        </div>
+      </div>
 
-  <!-- See All Posts Button -->
-  <div class="see-all-wrapper">
-    <a href="/AllPosts" class="see-all-posts">📚 See All Posts</a>
-  </div>
+      <div class="post-card">
+        <div class="card-header">
+          <button class="share-btn" data-link="https://wonderloop.dpdns.org/_Posts/post2.html">🔗</button>
+        </div>
+        <div class="card-body">
+          <h3 class="post-title">The Secret Lives of Everyday Things</h3>
+          <p class="post-preview">Uncover the mystery behind objects you use daily without a second thought.</p>
+        </div>
+        <div class="card-footer">
+          <span class="post-date">July 2025</span>
+          <button class="read-btn" data-link="/_Posts/post2.html">Read</button>
+        </div>
+      </div>
 
-  <!-- Footer Include -->
-  <div id="footer-container"></div>
+      <div class="post-card">
+        <div class="card-header">
+          <button class="share-btn" data-link="https://wonderloop.dpdns.org/_Posts/post3.html">🔗</button>
+        </div>
+        <div class="card-body">
+          <h3 class="post-title">Why Do We Yawn?</h3>
+          <p class="post-preview">An oddly contagious act with surprisingly complex science behind it.</p>
+        </div>
+        <div class="card-footer">
+          <span class="post-date">July 2025</span>
+          <button class="read-btn" data-link="/_Posts/post3.html">Read</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Scripts -->
+  <footer class="footer">
+    <p>&copy; 2025 Wonderloop. All rights reserved.</p>
+  </footer>
+
   <script src="home.js"></script>
 </body>
 </html>
